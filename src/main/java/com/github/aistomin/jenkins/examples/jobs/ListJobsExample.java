@@ -22,8 +22,8 @@ public class ListJobsExample {
      */
     public static void main(String[] args) throws Exception {
         Jenkins jenkins = new RealJenkins(
-            "https://cisdk-istomin.rhcloud.com",
-            new UsernamePasswordCredentials("integration", "2mFxM5tMVAKHMzTx")
+            "<YOUR JENKINS URL>",
+            new UsernamePasswordCredentials("<USERNAME>", "<PASSWORD>")
         );
         Jobs jobs = jenkins.jobs();
         System.out.println("----------------- JOBS -----------------");
