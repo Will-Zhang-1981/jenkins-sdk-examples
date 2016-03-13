@@ -10,8 +10,7 @@ import java.util.Iterator;
 /**
  * Created by aistomin on 12/03/16.
  *
- * This class demonstrates how to list Jenkins jobs, read details, search for
- * jobs etc.
+ * This class demonstrates how to list Jenkins jobs.
  */
 public class ListJobsExample {
 
