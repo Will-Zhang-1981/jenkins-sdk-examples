@@ -2,7 +2,6 @@ package com.github.aistomin.jenkins.examples.jobs;
 
 import com.github.aistomin.jenkins.Jenkins;
 import com.github.aistomin.jenkins.User;
-import com.github.aistomin.jenkins.Users;
 import com.github.aistomin.jenkins.real.RealJenkins;
 import com.github.aistomin.jenkins.real.UsernamePasswordCredentials;
 import java.util.Iterator;
@@ -10,9 +9,9 @@ import java.util.Iterator;
 /**
  * Created by aistomin on 25/03/16.
  *
- * This class demonstrates how to list Jenkins users.
+ * This class demonstrates how to search Jenkins users.
  */
-public class ListUsersExample {
+public class FindUsersExample {
 
     /**
      * Start example.
@@ -24,13 +23,13 @@ public class ListUsersExample {
             "<YOUR JENKINS URL>",
             new UsernamePasswordCredentials("<USERNAME>", "<PASSWORD>")
         );
-        Users users = jenkins.users();
-        System.out.println("----------------- USERS -----------------");
-        final Iterator<User> iterator = users.iterator();
-        while (iterator.hasNext()) {
-            User user =  iterator.next();
+        final Iterator<User> found = jenkins.users()
+            .findByUsername("<USERNAME>");
+        System.out.println("----------------- FOUND USERS -----------------");
+        while (found.hasNext()) {
+            User user =  found.next();
             System.out.println(user.fullName());
         }
-        System.out.println("----------------------------------------");
+        System.out.println("----------------------------------------------");
     }
 }
