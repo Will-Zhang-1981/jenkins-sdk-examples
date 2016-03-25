@@ -1,17 +1,16 @@
 package com.github.aistomin.jenkins.examples.jobs;
 
-import com.github.aistomin.jenkins.Build;
 import com.github.aistomin.jenkins.Jenkins;
+import com.github.aistomin.jenkins.Job;
 import com.github.aistomin.jenkins.real.RealJenkins;
 import com.github.aistomin.jenkins.real.UsernamePasswordCredentials;
-import java.util.Iterator;
 
 /**
  * Created by aistomin on 25/03/16.
  *
- * This class demonstrates how to search Jenkins builds.
+ * This class demonstrates how to trigger new build.
  */
-public class FindBuildsExample {
+public class TriggerJobExample {
 
     /**
      * Start example.
@@ -23,13 +22,8 @@ public class FindBuildsExample {
             "<YOUR JENKINS URL>",
             new UsernamePasswordCredentials("<USERNAME>", "<PASSWORD>")
         );
-        Iterator<Build> found = jenkins.jobs().findByName("<JOB NAME>")
-            .next().builds().findByNumber("<BUILD NUMBER>");
-        System.out.println("----------------- FOUND BUILDS -----------------");
-        while (found.hasNext()) {
-            Build build =  found.next();
-            System.out.println(build.details().fullDisplayName());
-        }
-        System.out.println("----------------------------------------------");
+        Job job = jenkins.jobs().findByName("<JOB NAME>").next();
+        job.trigger();
+        // look into your Jenkins web: new build must appear.
     }
 }

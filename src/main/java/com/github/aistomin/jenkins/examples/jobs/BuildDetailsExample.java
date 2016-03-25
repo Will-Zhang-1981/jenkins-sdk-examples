@@ -39,6 +39,9 @@ public class BuildDetailsExample {
             System.out.println(
                 "build.details().duration() = " + build.details().duration()
             );
+            System.out.println(
+                "build.result().name() = " + build.result().name()
+            );
         }
     }
 }
