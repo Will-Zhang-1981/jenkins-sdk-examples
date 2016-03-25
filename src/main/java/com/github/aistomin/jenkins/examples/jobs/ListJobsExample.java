@@ -26,7 +26,7 @@ public class ListJobsExample {
         );
         Jobs jobs = jenkins.jobs();
         System.out.println("----------------- JOBS -----------------");
-        final Iterator<Job> iterator = jobs.iterator();
+        Iterator<Job> iterator = jobs.iterator();
         while (iterator.hasNext()) {
             Job job =  iterator.next();
             System.out.println(job.name());

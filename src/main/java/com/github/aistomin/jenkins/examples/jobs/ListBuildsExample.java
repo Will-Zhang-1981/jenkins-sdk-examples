@@ -26,7 +26,7 @@ public class ListBuildsExample {
         );
         Job job = jenkins.jobs().findByName("<JOB NAME>").next();
         System.out.println("----------------- BUILDS -----------------");
-        final Iterator<Build> iterator = job.builds().iterator();
+        Iterator<Build> iterator = job.builds().iterator();
         while (iterator.hasNext()) {
             Build build =  iterator.next();
             System.out.println(build.number());

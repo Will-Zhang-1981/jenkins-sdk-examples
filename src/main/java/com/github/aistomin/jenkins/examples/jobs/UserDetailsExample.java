@@ -23,7 +23,7 @@ public class UserDetailsExample {
             "<YOUR JENKINS URL>",
             new UsernamePasswordCredentials("<USERNAME>", "<PASSWORD>")
         );
-        final Iterator<User> users = jenkins.users().iterator();
+        Iterator<User> users = jenkins.users().iterator();
         while (users.hasNext()) {
             User user = users.next();
             System.out.println("user.fullName() = " + user.fullName());

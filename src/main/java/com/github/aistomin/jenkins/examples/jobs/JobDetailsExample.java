@@ -30,7 +30,6 @@ public class JobDetailsExample {
             System.out.println("job.details().description() = " + job.details().description());
             System.out.println("job.details().buildable() = " + job.details().buildable());
             System.out.println("job.url() = " + job.url());
-
         }
     }
 }

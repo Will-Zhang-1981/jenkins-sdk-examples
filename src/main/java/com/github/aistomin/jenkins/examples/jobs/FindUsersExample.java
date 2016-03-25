@@ -23,7 +23,7 @@ public class FindUsersExample {
             "<YOUR JENKINS URL>",
             new UsernamePasswordCredentials("<USERNAME>", "<PASSWORD>")
         );
-        final Iterator<User> found = jenkins.users()
+        Iterator<User> found = jenkins.users()
             .findByUsername("<USERNAME>");
         System.out.println("----------------- FOUND USERS -----------------");
         while (found.hasNext()) {

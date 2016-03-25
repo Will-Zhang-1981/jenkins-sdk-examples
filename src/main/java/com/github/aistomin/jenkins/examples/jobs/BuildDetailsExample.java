@@ -25,7 +25,7 @@ public class BuildDetailsExample {
             new UsernamePasswordCredentials("<USERNAME>", "<PASSWORD>")
         );
         Job job = jenkins.jobs().findByName("<JOB NAME>").next();
-        final Iterator<Build> builds = job.builds().iterator();
+        Iterator<Build> builds = job.builds().iterator();
         while (builds.hasNext()) {
             Build build = builds.next();
             System.out.println(

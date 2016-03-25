@@ -23,7 +23,7 @@ public class FindJobsExample {
             "<YOUR JENKINS URL>",
             new UsernamePasswordCredentials("<USERNAME>", "<PASSWORD>")
         );
-        final Iterator<Job> found = jenkins.jobs().findByName("<JOB TO SEARCH>");
+        Iterator<Job> found = jenkins.jobs().findByName("<JOB TO SEARCH>");
         System.out.println("----------------- FOUND JOBS -----------------");
         while (found.hasNext()) {
             Job job =  found.next();
