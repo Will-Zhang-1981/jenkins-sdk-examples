@@ -1,17 +1,17 @@
 package com.github.aistomin.jenkins.examples.jobs;
 
+import com.github.aistomin.jenkins.Build;
 import com.github.aistomin.jenkins.Jenkins;
-import com.github.aistomin.jenkins.Job;
 import com.github.aistomin.jenkins.real.RealJenkins;
 import com.github.aistomin.jenkins.real.UsernamePasswordCredentials;
 import java.util.Iterator;
 
 /**
- * Created by aistomin on 12/03/16.
+ * Created by aistomin on 25/03/16.
  *
  * This class demonstrates how to search Jenkins jobs.
  */
-public class FindJobsExample {
+public class FindBuildsExample {
 
     /**
      * Start example.
@@ -23,11 +23,12 @@ public class FindJobsExample {
             "<YOUR JENKINS URL>",
             new UsernamePasswordCredentials("<USERNAME>", "<PASSWORD>")
         );
-        final Iterator<Job> found = jenkins.jobs().findByName("<JOB TO SEARCH>");
-        System.out.println("----------------- FOUND JOBS -----------------");
+        final Iterator<Build> found = jenkins.jobs().findByName("<JOB NAME>")
+            .next().builds().findByNumber("<BUILD NUMBER>");
+        System.out.println("----------------- FOUND BUILDS -----------------");
         while (found.hasNext()) {
-            Job job =  found.next();
-            System.out.println(job.name());
+            Build build =  found.next();
+            System.out.println(build.details().fullDisplayName());
         }
         System.out.println("----------------------------------------------");
     }
