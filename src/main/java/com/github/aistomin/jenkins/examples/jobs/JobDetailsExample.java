@@ -23,7 +23,7 @@ public class JobDetailsExample {
             "<YOUR JENKINS URL>",
             new UsernamePasswordCredentials("<USERNAME>", "<PASSWORD>")
         );
-        final Iterator<Job> jobs = jenkins.jobs().iterator();
+        Iterator<Job> jobs = jenkins.jobs().iterator();
         while (jobs.hasNext()) {
             Job job = jobs.next();
             System.out.println("job.details().displayName() = " + job.details().displayName());
@@ -32,6 +32,5 @@ public class JobDetailsExample {
             System.out.println("job.url() = " + job.url());
 
         }
-        System.out.println("Version: " + jenkins.version());
     }
 }
