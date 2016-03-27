@@ -1,4 +1,5 @@
 apply plugin: 'java'
+group = 'com.github.aistomin'
 
 repositories {
     mavenCentral()
