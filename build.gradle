@@ -1,13 +1,11 @@
 apply plugin: 'java'
 group = 'com.github.aistomin'
+version = '0.1'
 
 repositories {
     mavenCentral()
-    jcenter()
 }
 
 dependencies {
-    compile 'org.slf4j:slf4j-api:1.7.18'
     compile 'com.github.aistomin:jenkins-sdk:0.1'
-    testCompile 'junit:junit:4.12'
 }
