@@ -1,11 +1,11 @@
 apply plugin: 'java'
 group = 'com.github.aistomin'
-version = '0.2'
+version = '0.2.1'
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    compile 'com.github.aistomin:jenkins-sdk:0.2'
+    compile 'com.github.aistomin:jenkins-sdk:0.2.1'
 }
